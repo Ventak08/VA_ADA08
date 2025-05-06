@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Возможности | VA ADA</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="features.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="nav-wrapper">
+        <div class="nav-content">
+            <div class="logo">
+                <div class="logo-sphere"></div>
+                <span>VA ADA</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Главная</a>
+                <a href="about.html">О проекте</a>
+                <a href="features.html" class="active">Функции</a>
+                <a href="docs.html">Документация</a>
+                <a href="plugins.html">Плагины</a>
+                <a href="../index.html#download" class="cta-button">Скачать</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="features-page">
+        <!-- Интерактивное демо -->
+        <section class="interactive-demo">
+            <div class="demo-window">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="window-title">VA ADA Demo</div>
+                </div>
+                <div class="window-content">
+                    <div class="chat-interface">
+                        <div class="chat-messages">
+                            <div class="message assistant">Привет! Я VA ADA, чем могу помочь?</div>
+                        </div>
+                        <div class="quick-commands">
+                            <button class="quick-command" data-command="Открой браузер">
+                                <i class="fas fa-globe"></i> Открой браузер
+                            </button>
+                            <button class="quick-command" data-command="Сделай заметку">
+                                <i class="fas fa-note-sticky"></i> Сделай заметку
+                            </button>
+                            <button class="quick-command" data-command="Какая погода">
+                                <i class="fas fa-cloud-sun"></i> Какая погода
+                            </button>
+                            <button class="quick-command" data-command="Курс доллара">
+                                <i class="fas fa-dollar-sign"></i> Курс доллара
+                            </button>
+                            <button class="quick-command" data-command="Расскажи анекдот">
+                                <i class="fas fa-laugh"></i> Расскажи анекдот
+                            </button>
+                        </div>
+                        <div class="voice-interface">
+                            <div class="voice-visualizer">
+                                <!-- Визуализация голоса через JavaScript -->
+                            </div>
+                            <button class="mic-button">
+                                <i class="fas fa-microphone"></i>
+                                <div class="mic-ring"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Сетка функций -->
+        <section class="features-grid">
+            <div class="feature-category">
+                <h2>Основные возможности</h2>
+                <div class="features-list">
+                    <div class="feature-item" data-demo="window-control">
+                        <div class="feature-icon">
+                            <i class="fas fa-window-maximize"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Управление окнами</h3>
+                            <p>Голосовое управление окнами Windows</p>
+                            <button class="try-button">Попробовать</button>
+                        </div>
+                    </div>
+
+                    <div class="feature-item" data-demo="notes">
+                        <div class="feature-icon">
+                            <i class="fas fa-note-sticky"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Быстрые заметки</h3>
+                            <p>Создание и управление заметками голосом</p>
+                            <button class="try-button">Попробовать</button>
+                        </div>
+                    </div>
+
+                    <div class="feature-item" data-demo="finance">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Финансы</h3>
+                            <p>Актуальные курсы валют и котировки</p>
+                            <button class="try-button">Попробовать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно демонстрации -->
+    <div class="demo-modal">
+        <div class="modal-content">
+            <button class="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <!-- Содержимое будет добавлено через JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="features.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация | VA ADA</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="docs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="nav-wrapper">
+        <div class="nav-content">
+            <div class="logo">
+                <div class="logo-sphere"></div>
+                <span>VA ADA</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Главная</a>
+                <a href="about.html">О проекте</a>
+                <a href="features.html">Функции</a>
+                <a href="docs.html" class="active">Документация</a>
+                <a href="plugins.html">Плагины</a>
+                <a href="../index.html#download" class="cta-button">Скачать</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="docs-page">
+        <!-- Боковое меню -->
+        <aside class="docs-sidebar">
+            <div class="nav-section">
+                <h3>Начало работы</h3>
+                <ul>
+                    <li><a href="#installation" class="nav-link">Установка</a></li>
+                    <li><a href="#quickstart" class="nav-link">Быстрый старт</a></li>
+                    <li><a href="#configuration" class="nav-link">Настройка</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>Основные функции</h3>
+                <ul>
+                    <li><a href="#voice-commands" class="nav-link">Голосовые команды</a></li>
+                    <li><a href="#plugins" class="nav-link">Работа с плагинами</a></li>
+                    <li><a href="#automation" class="nav-link">Автоматизация</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>Разработка</h3>
+                <ul>
+                    <li><a href="#plugin-development" class="nav-link">Создание плагинов</a></li>
+                    <li><a href="#api-reference" class="nav-link">API Reference</a></li>
+                    <li><a href="#examples" class="nav-link">Примеры</a></li>
+                    <li><a href="#publishing-plugins" class="nav-link">Публикация плагинов</a></li>
+                </ul>
+            </div>
+            <div class="nav-section">
+                <h3>Справка</h3>
+                <ul>
+                    <li><a href="#faq" class="nav-link">Частые вопросы</a></li>
+                    <li><a href="#troubleshooting" class="nav-link">Решение проблем</a></li>
+                    <li><a href="#changelog" class="nav-link">История изменений</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Основной контент -->
+        <div class="docs-content">
+            <section id="installation" class="content-section">
+                <h1>Документация VA ADA</h1>
+                <h2>Установка</h2>
+                <p>Следуйте этим шагам для установки VA ADA:</p>
+                
+                <div class="code-block">
+                    <pre><code class="language-bash">1. Скачайте последнюю версию VA ADA
+2. Распакуйте архив в удобное место
+3. Запустите install.bat
+4. Следуйте инструкциям установщика</code></pre>
+                    <button class="copy-button" data-clipboard-target="#install-code">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+
+                <div class="requirements">
+                    <h3>Системные требования</h3>
+                    <ul>
+                        <li>Windows 10/11</li>
+                        <li>Python 3.8+</li>
+                        <li>4 GB RAM</li>
+                        <li>2 GB свободного места</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="quickstart" class="content-section">
+                <h2>Быстрый старт</h2>
+                <p>После установки VA ADA будет готов к использованию. Вот несколько базовых команд для начала:</p>
+                
+                <table class="docs-table">
+                    <tr>
+                        <th>Команда</th>
+                        <th>Действие</th>
+                    </tr>
+                    <tr>
+                        <td>"Привет"</td>
+                        <td>Активация ассистента</td>
+                    </tr>
+                    <tr>
+                        <td>"Открой браузер"</td>
+                        <td>Запуск веб-браузера</td>
+                    </tr>
+                    <tr>
+                        <td>"Сделай заметку"</td>
+                        <td>Создание новой заметки</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section id="configuration" class="content-section">
+                <h2>Настройка</h2>
+                <p>Настройте VA ADA под свои потребности через файл конфигурации или интерфейс настроек.</p>
+
+                <div class="code-block">
+                    <pre><code class="language-json">{
+    "voice": {
+        "trigger_word": "привет",
+        "language": "ru",
+        "volume": 1.0
+    },
+    "interface": {
+        "theme": "dark",
+        "notifications": true
+    }
+}</code></pre>
+                    <button class="copy-button">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section id="voice-commands" class="content-section">
+                <h2>Голосовые команды</h2>
+                <p>VA ADA поддерживает широкий спектр голосовых команд:</p>
+
+                <div class="command-categories">
+                    <div class="command-category">
+                        <h3>Системные команды</h3>
+                        <ul>
+                            <li>"Открой [программу]"</li>
+                            <li>"Сверни окно"</li>
+                            <li>"Выключи компьютер"</li>
+                        </ul>
+                    </div>
+                    <div class="command-category">
+                        <h3>Работа с данными</h3>
+                        <ul>
+                            <li>"Создай заметку"</li>
+                            <li>"Найди файл"</li>
+                            <li>"Открой последнюю заметку"</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="plugins" class="content-section">
+                <h2>Работа с плагинами</h2>
+                <p>Расширьте функциональность VA ADA с помощью плагинов:</p>
+
+                <div class="steps-list">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <h3>Установка плагинов</h3>
+                        <p>Откройте раздел плагинов и выберите нужные расширения</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <h3>Настройка</h3>
+                        <p>Настройте параметры плагина под свои нужды</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <h3>Использование</h3>
+                        <p>Используйте новые команды, предоставляемые плагином</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="automation" class="content-section">
+                <h2>Автоматизация</h2>
+                <p>Создавайте сценарии автоматизации для повторяющихся задач:</p>
+
+                <div class="code-block">
+                    <pre><code class="language-python">@automation.command("доброе утро")
+def morning_routine():
+    # Открываем шторы
+    smart_home.blinds.open()
+    # Включаем свет
+    smart_home.lights.set_brightness(80)
+    # Показываем прогноз погоды
+    weather.show_forecast()</code></pre>
+                    <button class="copy-button">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section id="plugin-development" class="content-section">
+                <h2>Создание плагинов</h2>
+                <p>Создайте свой плагин для VA ADA, следуя этому руководству:</p>
+
+                <div class="code-block">
+                    <pre><code class="language-python">from vacore import Plugin
+
+class MyPlugin(Plugin):
+    def __init__(self):
+        super().__init__("my_plugin")
+        self.add_command("привет мир", self.hello_world)
+
+    def hello_world(self, command):
+        return "Привет от моего плагина!"
+
+# Регистрация плагина
+plugin = MyPlugin()</code></pre>
+                    <button class="copy-button">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+
+                <div class="info-box">
+                    <h3>Структура плагина</h3>
+                    <ul>
+                        <li>Основной класс плагина</li>
+                        <li>Методы обработки команд</li>
+                        <li>Конфигурация и настройки</li>
+                        <li>Документация</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="api-reference" class="content-section">
+                <h2>API Reference</h2>
+                <p>Полная документация по API VA ADA для разработчиков:</p>
+
+                <div class="api-section">
+                    <h3>Основные классы</h3>
+                    <table class="docs-table">
+                        <tr>
+                            <th>Класс</th>
+                            <th>Описание</th>
+                        </tr>
+                        <tr>
+                            <td>Plugin</td>
+                            <td>Базовый класс для создания плагинов</td>
+                        </tr>
+                        <tr>
+                            <td>Command</td>
+                            <td>Обработка голосовых команд</td>
+                        </tr>
+                        <tr>
+                            <td>AudioManager</td>
+                            <td>Управление аудио и голосом</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="api-section">
+                    <h3>Методы Plugin</h3>
+                    <div class="code-block">
+                        <pre><code class="language-python"># Регистрация команды
+add_command(pattern: str, handler: callable)
+
+# Настройка плагина
+configure(settings: dict)
+
+# Обработка события
+on_event(event_type: str, data: dict)</code></pre>
+                        <button class="copy-button">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="examples" class="content-section">
+                <h2>Примеры</h2>
+                <p>Практические примеры использования API:</p>
+
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="basic">Базовый плагин</button>
+                    <button class="tab-button" data-tab="advanced">Продвинутый</button>
+                </div>
+
+                <div class="tab-content active" id="basic">
+                    <div class="code-block">
+                        <pre><code class="language-python">from vacore import Plugin
+
+class WeatherPlugin(Plugin):
+    def __init__(self):
+        super().__init__("weather")
+        self.add_command("погода", self.get_weather)
+
+    def get_weather(self, command):
+        # Получение погоды
+        return "Сейчас солнечно, 20°C"</code></pre>
+                        <button class="copy-button">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="advanced">
+                    <div class="code-block">
+                        <pre><code class="language-python">class SmartHomePlugin(Plugin):
+    def __init__(self):
+        super().__init__("smart_home")
+        self.devices = {}
+        self.load_devices()
+
+    def load_devices(self):
+        # Инициализация устройств
+        pass
+
+    @command("включи свет в {room}")
+    def turn_on_light(self, room):
+        if room in self.devices:
+            self.devices[room].turn_on()
+            return f"Включаю свет в {room}"</code></pre>
+                        <button class="copy-button">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="publishing-plugins" class="content-section">
+                <h2>Публикация плагинов</h2>
+                <p>Опубликуйте свой плагин в каталоге VA ADA:</p>
+
+                <div class="publishing-steps">
+                    <div class="step">
+                        <h3>1. Подготовка</h3>
+                        <ul>
+                            <li>Проверьте код на соответствие стандартам</li>
+                            <li>Добавьте документацию</li>
+                            <li>Создайте README.md</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h3>2. Тестирование</h3>
+                        <ul>
+                            <li>Напишите тесты</li>
+                            <li>Проверьте работу на разных системах</li>
+                            <li>Протестируйте установку</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <h3>3. Публикация</h3>
+                        <ul>
+                            <li>Создайте релиз на GitHub</li>
+                            <li>Заполните форму публикации</li>
+                            <li>Дождитесь проверки модераторами</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="content-section">
+                <h2>Частые вопросы</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>Как изменить голос ассистента?</h3>
+                        <p>Перейдите в настройки → Голос и выберите предпочитаемый голосовой движок.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Можно ли использовать свои команды?</h3>
+                        <p>Да, создайте пользовательский плагин и добавьте свои команды.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Как добавить новый язык?</h3>
+                        <p>Установите соответствующий языковой пакет через менеджер плагинов.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="troubleshooting" class="content-section">
+                <h2>Решение проблем</h2>
+                <div class="troubleshooting-list">
+                    <div class="issue">
+                        <h3>Ассистент не распознает команды</h3>
+                        <ol>
+                            <li>Проверьте подключение микрофона</li>
+                            <li>Убедитесь, что выбран правильный язык</li>
+                            <li>Проверьте уровень шума</li>
+                        </ol>
+                    </div>
+                    <div class="issue">
+                        <h3>Плагин не устанавливается</h3>
+                        <ol>
+                            <li>Проверьте версию Python</li>
+                            <li>Убедитесь в наличии всех зависимостей</li>
+                            <li>Проверьте права доступа</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section id="changelog" class="content-section">
+                <h2>История изменений</h2>
+                <div class="changelog">
+                    <div class="version">
+                        <h3>Версия 1.2.0 <span class="date">1 мая 2025</span></h3>
+                        <ul>
+                            <li>Добавлена поддержка новых языков</li>
+                            <li>Улучшено распознавание голоса</li>
+                            <li>Оптимизирована работа с памятью</li>
+                        </ul>
+                    </div>
+                    <div class="version">
+                        <h3>Версия 1.1.0 <span class="date">15 апреля 2025</span></h3>
+                        <ul>
+                            <li>Добавлен новый голосовой движок</li>
+                            <li>Исправлены ошибки в работе плагинов</li>
+                            <li>Улучшен пользовательский интерфейс</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Мобильная кнопка меню -->
+    <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Скрипты -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Инициализация AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Мобильное меню
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const sidebar = document.querySelector('.docs-sidebar');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Плавная прокрутка к разделам
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').slice(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    if (window.innerWidth < 768) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Подсветка активного пункта меню
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Копирование кода
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.parentElement.querySelector('code').textContent;
+                navigator.clipboard.writeText(code);
+                
+                const icon = button.querySelector('i');
+                icon.className = 'fas fa-check';
+                setTimeout(() => {
+                    icon.className = 'fas fa-copy';
+                }, 2000);
+            });
+        });
+
+        // Табы в примерах
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tab = button.dataset.tab;
+                
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                button.classList.add('active');
+                document.getElementById(tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

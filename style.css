@@ -1,0 +1,855 @@
+/* Основные стили и переменные */
+:root {
+    --primary: #2D46B9;
+    --primary-light: #3D56C9;
+    --secondary: #1A1A1A;
+    --accent: #00F0FF;
+    --text: #FFFFFF;
+    --background: #0A0A0A;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+    --animation-speed: 0.3s;
+    --hover-lift: translateY(-5px);
+    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    --interaction-highlight: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* Кастомный курсор */
+.cursor-outer,
+.cursor-inner {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+.cursor-outer {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.cursor-inner {
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    transition: transform 0.2s ease;
+}
+
+/* Фоновые элементы */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.gradient-sphere {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--gradient);
+    filter: blur(100px);
+    opacity: 0.2;
+    border-radius: 50%;
+    animation: sphereFloat 20s infinite ease-in-out;
+}
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Навигация */
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background: rgba(10, 10, 10, 0.8);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-sphere {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.cta-button {
+    background: var(--gradient);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Главная секция */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.glitch-text {
+    font-size: 5rem;
+    font-weight: 900;
+    position: relative;
+    animation: glitch 3s infinite;
+}
+
+.typewriter {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.5s;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-button {
+    background: var(--gradient);
+    color: var(--text);
+}
+
+.secondary-button {
+    border: 2px solid var(--primary);
+    color: var(--text);
+}
+
+.button-particle {
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    opacity: 0.2;
+    transition: transform 0.5s ease;
+}
+
+.primary-button:hover .button-particle {
+    transform: translateX(100%);
+}
+
+/* Секция возможностей */
+.features {
+    padding: 6rem 2rem;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.feature-icon i {
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+.feature-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover .feature-hover {
+    opacity: 0.1;
+}
+
+/* Демо секция */
+.experience {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(45, 70, 185, 0.1));
+}
+
+.demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.demo-video {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.demo-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.demo-feature {
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.demo-feature:hover {
+    transform: translateX(10px);
+}
+
+.feature-number {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.demo-window {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.demo-window:hover {
+    transform: translateY(-10px);
+}
+
+.window-header {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.window-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.window-controls span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.window-controls span:nth-child(1) { background: #ff5f57; }
+.window-controls span:nth-child(2) { background: #febc2e; }
+.window-controls span:nth-child(3) { background: #28c840; }
+
+.window-title {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Секция новостей */
+.news-section {
+    padding: 6rem 2rem;
+    background: var(--background);
+    position: relative;
+    overflow: hidden;
+}
+
+.news-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.news-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover::before {
+    transform: scaleX(1);
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
+}
+
+.news-date {
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.news-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.news-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    color: var(--accent);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: gap 0.3s ease;
+}
+
+.read-more:hover {
+    gap: 1rem;
+}
+
+.read-more i {
+    font-size: 0.8rem;
+}
+
+/* Секция загрузки */
+.download {
+    padding: 6rem 2rem;
+}
+
+.download-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.download-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.download-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-features {
+    margin: 2rem 0;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.download-button {
+    display: block;
+    background: var(--gradient);
+    color: var(--text);
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: var(--gradient);
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.download-button:hover .download-progress {
+    width: 100%;
+}
+
+.file-size {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Улучшенная кнопка микрофона */
+.mic-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient);
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.mic-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mic-button:hover::before {
+    opacity: 1;
+}
+
+.mic-button:hover {
+    transform: scale(1.1);
+}
+
+.mic-button.recording {
+    animation: pulseRecording 2s infinite;
+}
+
+@keyframes pulseRecording {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(0, 240, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+    }
+}
+
+/* Футер */
+.footer {
+    background: var(--secondary);
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.link-group h4 {
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+.link-group a,
+.link-group span {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Анимации */
+@keyframes sphereFloat {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(100px, -50px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 rgba(255,0,0,0.75),
+                     -0.025em -0.05em 0 rgba(0,255,0,0.75),
+                     0.025em 0.05em 0 rgba(0,0,255,0.75);
+    }
+    14% {
+        text-shadow: 0.05em 0 0 rgba(255,0,0,0.75),
+                     -0.025em -0.05em 0 rgba(0,255,0,0.75),
+                     0.025em 0.05em 0 rgba(0,0,255,0.75);
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75),
+                     0.025em 0.025em 0 rgba(0,255,0,0.75),
+                     -0.05em -0.05em 0 rgba(0,0,255,0.75);
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75),
+                     0.025em 0.025em 0 rgba(0,255,0,0.75),
+                     -0.05em -0.05em 0 rgba(0,0,255,0.75);
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75),
+                     0.05em 0 0 rgba(0,255,0,0.75),
+                     0 -0.05em 0 rgba(0,0,255,0.75);
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75),
+                     0.05em 0 0 rgba(0,255,0,0.75),
+                     0 -0.05em 0 rgba(0,0,255,0.75);
+    }
+    100% {
+        text-shadow: -0.025em 0 0 rgba(255,0,0,0.75),
+                     -0.025em -0.025em 0 rgba(0,255,0,0.75),
+                     -0.025em -0.05em 0 rgba(0,0,255,0.75);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Глобальные анимации */
+.animate-in {
+    animation: fadeIn var(--animation-speed) ease forwards;
+}
+
+.animate-up {
+    animation: slideUp var(--animation-speed) ease forwards;
+}
+
+/* Интерактивные эффекты */
+.interactive {
+    transition: transform var(--animation-speed) ease, 
+                box-shadow var(--animation-speed) ease;
+}
+
+.interactive:hover {
+    transform: var(--hover-lift);
+    box-shadow: var(--card-shadow);
+}
+
+/* Улучшенная обратная связь */
+.clickable {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.clickable::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: var(--interaction-highlight);
+    border-radius: inherit;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.clickable:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: transform 0s;
+}
+
+/* Улучшенные состояния фокуса */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Плавные переходы для всех интерактивных элементов */
+a, button, input, .card, .icon {
+    transition: all var(--animation-speed) ease;
+}
+
+/* Эффект пульсации */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Улучшенная доступность */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Медиа запросы */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .menu-button {
+        display: block;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .demo-container {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-features {
+        margin-top: 2rem;
+    }
+
+    .window-content {
+        padding: 1rem;
+    }
+}
+
+/* Эффекты при наведении */
+a:hover,
+button:hover {
+    transform: scale(1.05);
+}
+
+.feature-card:hover .feature-icon,
+.download-card:hover .download-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.nav-links a:hover {
+    text-shadow: 0 0 10px var(--accent);
+}
+
+.feature-card:hover .feature-icon {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+}

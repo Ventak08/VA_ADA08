@@ -1,0 +1,401 @@
+/* Эффект глюка для заголовка */
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(45px, 9999px, 56px, 0);
+    }
+    20% {
+        clip: rect(2px, 9999px, 34px, 0);
+    }
+    40% {
+        clip: rect(78px, 9999px, 92px, 0);
+    }
+    60% {
+        clip: rect(23px, 9999px, 67px, 0);
+    }
+    80% {
+        clip: rect(89px, 9999px, 12px, 0);
+    }
+    100% {
+        clip: rect(34px, 9999px, 78px, 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(12px, 9999px, 89px, 0);
+    }
+    20% {
+        clip: rect(78px, 9999px, 34px, 0);
+    }
+    40% {
+        clip: rect(23px, 9999px, 45px, 0);
+    }
+    60% {
+        clip: rect(67px, 9999px, 92px, 0);
+    }
+    80% {
+        clip: rect(34px, 9999px, 56px, 0);
+    }
+    100% {
+        clip: rect(92px, 9999px, 2px, 0);
+    }
+}
+
+/* Анимация печатающегося текста */
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid var(--primary-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(40, end),
+               blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary-color) }
+}
+
+/* Анимация логотипа */
+.logo-animation {
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Пульсирующая анимация для кнопки скачивания */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(108, 92, 231, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(108, 92, 231, 0);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Анимация появления текста */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимированный градиент фона */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.download-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #6c5ce7, #a29bfe, #fd79a8, #6c5ce7);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    z-index: 0;
+}
+
+/* Анимация для кнопки скачивания */
+.download-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.download-btn:hover::before {
+    left: 100%;
+}
+
+/* Анимация для иконок в feature cards */
+.feature-card i {
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover i {
+    transform: scale(1.2) rotate(360deg);
+}
+
+/* Плавающая анимация для hero section */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hero-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Анимация для визуализации голоса */
+.voice-bar {
+    width: 4px;
+    height: 100%;
+    background: var(--primary-color);
+    margin: 0 2px;
+    border-radius: 2px;
+    animation: soundWave 1s ease-in-out infinite;
+}
+
+@keyframes soundWave {
+    0%, 100% {
+        transform: scaleY(0.2);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+/* Анимация для появления карточек */
+.feature-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: cardAppear 0.6s ease forwards;
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Добавляем задержку для последовательного появления */
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+.feature-card:nth-child(5) { animation-delay: 0.5s; }
+.feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Анимация для подсветки навигации */
+.nav-link.highlight {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link.highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.5s;
+}
+
+.nav-link.highlight:hover::before {
+    left: 100%;
+}
+
+/* Анимация для частиц */
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: particleFloat 6s infinite linear;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Визуализация голоса */
+.voice-visualization {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 50px;
+}
+
+.voice-visualization::before {
+    content: '';
+    width: 4px;
+    height: 100%;
+    background: var(--primary-color);
+    animation: voice-wave 1s ease-in-out infinite;
+}
+
+.voice-visualization::after {
+    content: '';
+    width: 4px;
+    height: 100%;
+    background: var(--accent-color);
+    animation: voice-wave 1s ease-in-out infinite reverse;
+}
+
+@keyframes voice-wave {
+    0%, 100% { height: 100%; }
+    50% { height: 20%; }
+}
+
+/* Частицы в секции загрузки */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particles-container::before,
+.particles-container::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float 6s infinite;
+}
+
+.particles-container::before {
+    left: 10%;
+    animation-delay: -2s;
+}
+
+.particles-container::after {
+    right: 10%;
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Анимации появления для AOS */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Анимация наведения для карточек */
+.feature-card {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+}
