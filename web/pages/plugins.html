@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Плагины - VA ADA</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="plugins.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Фоновые элементы -->
+    <div class="background">
+        <div class="gradient-sphere"></div>
+        <div class="particles"></div>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="nav-wrapper">
+        <div class="nav-content">
+            <div class="logo">
+                <div class="logo-sphere"></div>
+                <span>VA ADA</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Главная</a>
+                <a href="about.html">О проекте</a>
+                <a href="features.html">Функции</a>
+                <a href="docs.html">Документация</a>
+                <a href="plugins.html" class="active">Плагины</a>
+                <a href="../index.html#download" class="cta-button">Скачать</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="plugins-page">
+        <!-- Заголовок и поиск -->
+        <section class="plugins-hero" data-aos="fade-up">
+            <h1>Плагины VA ADA</h1>
+            <p>Расширьте возможности вашего голосового ассистента</p>
+            
+            <div class="search-filters">
+                <div class="search-box">
+                    <input type="text" placeholder="Поиск плагинов...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">Все</button>
+                    <button class="filter-btn" data-category="utility">Утилиты</button>
+                    <button class="filter-btn" data-category="integration">Интеграции</button>
+                    <button class="filter-btn" data-category="ai">ИИ и Голос</button>
+                    <button class="filter-btn" data-category="productivity">Продуктивность</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Сетка плагинов -->
+        <section class="plugins-grid">
+            <!-- Плагины добавляются динамически через JavaScript -->
+        </section>
+
+        <!-- Создание плагина -->
+        <section class="create-plugin" data-aos="fade-up">
+            <div class="create-content">
+                <h2>Создайте свой плагин</h2>
+                <p>Расширьте возможности VA Assistant, создав собственный плагин</p>
+                
+                <div class="create-steps">
+                    <div class="step" data-aos="fade-up" data-aos-delay="100">
+                        <span class="step-number">01</span>
+                        <div class="step-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Подготовка</h3>
+                        <p>Ознакомьтесь с документацией по разработке плагинов</p>
+                        <a href="docs.html#plugin-development" class="step-link">
+                            Читать руководство
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-up" data-aos-delay="200">
+                        <span class="step-number">02</span>
+                        <div class="step-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Разработка</h3>
+                        <p>Используйте наши шаблоны и API для создания функционала</p>
+                        <a href="docs.html#api-reference" class="step-link">
+                            Начать разработку
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="step" data-aos="fade-up" data-aos-delay="300">
+                        <span class="step-number">03</span>
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Публикация</h3>
+                        <p>Опубликуйте свой плагин в каталоге VA Assistant</p>
+                        <a href="docs.html#publishing-plugins" class="step-link">
+                            Опубликовать плагин
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Шаблон карточки плагина -->
+    <template id="plugin-card-template">
+        <div class="plugin-card" data-aos="fade-up">
+            <div class="plugin-badges">
+                <span class="badge official">Официальный</span>
+                <span class="badge featured">Рекомендуемый</span>
+                <span class="badge new">Новый</span>
+                <span class="badge downloads">1000+ загрузок</span>
+            </div>
+            <div class="plugin-icon">
+                <i class="fas fa-puzzle-piece"></i>
+            </div>
+            <h3></h3>
+            <p class="description"></p>
+            <div class="plugin-meta">
+                <span class="author">
+                    <i class="fas fa-user"></i>
+                    <span></span>
+                </span>
+                <span class="version">
+                    <i class="fas fa-code-branch"></i>
+                    <span></span>
+                </span>
+            </div>
+            <button class="install-btn">
+                <i class="fas fa-download"></i>
+                <span>Установить</span>
+            </button>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="plugins.js"></script>
+</body>
+</html>

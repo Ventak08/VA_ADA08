@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VA ADA | Интеллектуальный голосовой ассистент</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Кастомный курсор -->
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+    
+    <!-- Фоновые элементы -->
+    <div class="background">
+        <div class="gradient-sphere"></div>
+        <div class="particles"></div>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="nav-wrapper">
+        <div class="nav-content">
+            <div class="logo">
+                <div class="logo-sphere"></div>
+                <span>VA ADA</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">Главная</a>
+                <a href="pages/about.html">О проекте</a>
+                <a href="pages/features.html">Функции</a>
+                <a href="pages/docs.html">Документация</a>
+                <a href="pages/plugins.html">Плагины</a>
+                <a href="#download" class="cta-button">Скачать</a>
+            </div>
+            <div class="menu-button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Главная секция -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch-text" data-text="VA ADA">VA ADA</h1>
+            <p class="typewriter">Будущее голосового управления уже здесь</p>
+            <div class="hero-buttons">
+                <a href="#download" class="primary-button">
+                    <span>Начать</span>
+                    <div class="button-particle"></div>
+                </a>
+                <a href="#experience" class="secondary-button">
+                    <span>Смотреть демо</span>
+                    <i class="fas fa-play"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="voice-visualizer"></div>
+            <div class="floating-elements">
+                <div class="float-element" data-speed="2"><i class="fas fa-microphone"></i></div>
+                <div class="float-element" data-speed="1.5"><i class="fas fa-brain"></i></div>
+                <div class="float-element" data-speed="3"><i class="fas fa-cog"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция возможностей -->
+    <section id="features" class="features">
+        <h2 data-aos="fade-up">Возможности</h2>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <h3>Голосовое управление</h3>
+                <p>Естественное общение с вашим компьютером</p>
+                <div class="feature-hover"></div>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>ИИ технологии</h3>
+                <p>Умный анализ и понимание контекста</p>
+                <div class="feature-hover"></div>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Быстрый отклик</h3>
+                <p>Мгновенное выполнение команд</p>
+                <div class="feature-hover"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Демо секция -->
+    <section id="experience" class="experience">
+        <div class="experience-content" data-aos="fade-right">
+            <h2>Попробуйте сами</h2>
+            <div class="demo-container">
+                <div class="demo-window interactive">
+                    <div class="window-header">
+                        <div class="window-controls">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="window-title">VA ADA Demo</div>
+                    </div>
+                    <div class="window-content">
+                        <div class="chat-interface">
+                            <div class="chat-messages">
+                                <div class="message assistant">Привет! Я VA ADA, чем могу помочь?</div>
+                                <div class="message user">Какие команды ты поддерживаешь?</div>
+                                <div class="message assistant">Вот несколько примеров:
+                                    - "Открой браузер" - запуск веб-браузера
+                                    - "Закрой окно" - закрытие активного окна
+                                    - "Сделай заметку" - создание быстрой заметки
+                                    - "Расскажи анекдот" - юмор для разрядки
+                                    - "Включи музыку" - управление медиаплеером
+                                    И это лишь малая часть возможностей!</div>
+                            </div>
+                            <div class="voice-interface">
+                                <div class="voice-visualizer">
+                                    <!-- Визуализация голоса через JavaScript -->
+                                </div>
+                                <button class="mic-button">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-features">
+                    <div class="demo-feature active" data-aos="fade-left" data-aos-delay="100">
+                        <span class="feature-number">01</span>
+                        <h3>Умное управление окнами</h3>
+                        <p>Максимизируйте, минимизируйте, закрывайте окна голосом</p>
+                    </div>
+                    <div class="demo-feature" data-aos="fade-left" data-aos-delay="200">
+                        <span class="feature-number">02</span>
+                        <h3>Интеллектуальный диалог</h3>
+                        <p>Общайтесь на естественном языке с контекстным пониманием</p>
+                    </div>
+                    <div class="demo-feature" data-aos="fade-left" data-aos-delay="300">
+                        <span class="feature-number">03</span>
+                        <h3>Быстрые заметки</h3>
+                        <p>Создавайте и управляйте заметками с помощью голоса</p>
+                    </div>
+                    <div class="demo-feature" data-aos="fade-left" data-aos-delay="400">
+                        <span class="feature-number">04</span>
+                        <h3>Финансовый помощник</h3>
+                        <p>Получайте актуальные данные о курсах и котировках</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция новостей и обновлений -->
+    <section id="news" class="news-section">
+        <div class="news-content">
+            <h2 data-aos="fade-up">Новости и обновления</h2>
+            <div class="news-grid">
+                <div class="news-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="news-date">4 мая 2025</div>
+                    <h3>Версия 2.0 уже доступна!</h3>
+                    <p>Мы рады представить новую версию VA ADA с улучшенным распознаванием речи и поддержкой нейросети GPT.</p>
+                    <a href="#" class="read-more">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="news-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="news-date">1 мая 2025</div>
+                    <h3>Новые плагины</h3>
+                    <p>Добавлено 5 новых плагинов для работы с финансами, погодой и управления умным домом.</p>
+                    <a href="#" class="read-more">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="news-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-date">25 апреля 2025</div>
+                    <h3>Улучшение производительности</h3>
+                    <p>Оптимизирована работа с памятью и ускорена обработка голосовых команд.</p>
+                    <a href="#" class="read-more">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция загрузки -->
+    <section id="download" class="download">
+        <div class="download-content" data-aos="zoom-in">
+            <h2>Готовы начать?</h2>
+            <div class="download-card">
+                <div class="download-header">
+                    <div class="download-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="download-info">
+                        <h3>VA ADA</h3>
+                        <span class="version">Версия 1.0.0</span>
+                    </div>
+                </div>
+                <div class="download-features">
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>Полная версия</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>Все плагины включены</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>Бесплатные обновления</span>
+                    </div>
+                </div>
+                <a href="VA_ADA-assistent.zip" class="download-button" download>
+                    <span>Скачать для Windows</span>
+                    <div class="download-progress"></div>
+                </a>
+                <span class="file-size">245 MB</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-sphere"></div>
+                <span>VA ADA</span>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Навигация</h4>
+                    <a href="#home">Главная</a>
+                    <a href="pages/about.html">О проекте</a>
+                    <a href="pages/features.html">Функции</a>
+                    <a href="pages/docs.html">Документация</a>
+                    <a href="pages/plugins.html">Плагины</a>
+                    <a href="#download">Скачать</a>
+                </div>
+                <div class="link-group">
+                    <h4>Ресурсы</h4>
+                    <a href="pages/docs.html#quickstart">Быстрый старт</a>
+                    <a href="pages/docs.html#api">API</a>
+                    <a href="pages/features.html#demo">Демонстрация</a>
+                </div>
+                <div class="link-group">
+                    <h4>Контакты</h4>
+                    <a href="mailto:contact@va-ada.com">Email</a>
+                    <a href="https://github.com/va-ada">GitHub</a>
+                    <a href="https://t.me/va_ada">Telegram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 VA ADA. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

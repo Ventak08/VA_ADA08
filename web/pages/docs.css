@@ -1,0 +1,374 @@
+/* Стили страницы документации */
+.docs-page {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding-top: 80px;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Боковое меню */
+.docs-sidebar {
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-section {
+    margin-bottom: 2rem;
+}
+
+.nav-section h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.nav-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-section li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--gradient);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Основной контент */
+.docs-content {
+    padding: 2rem;
+    max-width: 900px;
+}
+
+.content-section {
+    margin-bottom: 4rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.content-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+.content-section h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: var(--text);
+}
+
+.content-section p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+}
+
+/* Код */
+.code-block {
+    position: relative;
+    margin: 2rem 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.code-block code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    color: var(--text);
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.code-block:hover .copy-button {
+    opacity: 1;
+}
+
+.copy-button:hover {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Таблицы */
+.docs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.docs-table th,
+.docs-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.docs-table th {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.docs-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Шаги */
+.steps-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: var(--gradient);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 2px solid var(--accent);
+    border-radius: 25px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover,
+.tab-button.active {
+    background: var(--gradient);
+    border-color: transparent;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+/* FAQ */
+.faq-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateX(10px);
+}
+
+/* Changelog */
+.changelog {
+    display: grid;
+    gap: 2rem;
+}
+
+.version {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.version h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: normal;
+}
+
+/* API Section */
+.api-section {
+    margin-bottom: 3rem;
+}
+
+.info-box {
+    background: rgba(0, 240, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .docs-page {
+        grid-template-columns: 1fr;
+    }
+
+    .docs-sidebar {
+        position: fixed;
+        left: -300px;
+        z-index: 1000;
+        height: 100vh;
+        top: 0;
+        margin: 0;
+        padding-top: 80px;
+    }
+
+    .docs-sidebar.active {
+        left: 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 50px;
+        height: 50px;
+        background: var(--gradient);
+        border: none;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu-toggle:hover {
+        transform: scale(1.1);
+    }
+
+    .docs-content {
+        padding: 1rem;
+    }
+
+    .steps-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Кастомный скроллбар */
+.docs-sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.docs-sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.docs-sidebar::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+.docs-sidebar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, var(--accent), var(--primary));
+}

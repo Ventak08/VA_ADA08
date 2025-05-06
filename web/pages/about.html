@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте VA ADA | Интеллектуальный голосовой ассистент</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Кастомный курсор -->
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+    
+    <!-- Фоновые элементы -->
+    <div class="background">
+        <div class="gradient-sphere"></div>
+        <div class="particles"></div>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="nav-wrapper">
+        <div class="nav-content">
+            <div class="logo">
+                <div class="logo-sphere"></div>
+                <span>VA ADA</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Главная</a>
+                <a href="about.html" class="active">О проекте</a>
+                <a href="features.html">Функции</a>
+                <a href="docs.html">Документация</a>
+                <a href="plugins.html">Плагины</a>
+                <a href="../index.html#download" class="cta-button">Скачать</a>
+            </div>
+            <div class="menu-button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="about-page">
+        <section class="about-hero">
+            <h1 class="reveal-text">История проекта VA ADA</h1>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Начало разработки</h3>
+                        <p>Проект начался как эксперимент по созданию умного голосового помощника</p>
+                        <span class="date">2023</span>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Первый релиз</h3>
+                        <p>Запуск базовой версии с поддержкой голосовых команд</p>
+                        <span class="date">2024</span>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Интеграция ИИ</h3>
+                        <p>Добавление продвинутых алгоритмов машинного обучения</p>
+                        <span class="date">2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-stack">
+            <h2 data-aos="fade-up">Технологии</h2>
+            <div class="tech-grid">
+                <div class="tech-card" data-aos="zoom-in">
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Основной язык разработки</p>
+                    <div class="tech-details">
+                        <ul>
+                            <li>PyQt для интерфейса</li>
+                            <li>TensorFlow для ИИ</li>
+                            <li>NumPy для обработки данных</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="tech-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Распознавание речи</h3>
+                    <p>Продвинутые алгоритмы</p>
+                    <div class="tech-details">
+                        <ul>
+                            <li>Vosk для распознавания</li>
+                            <li>Silero для синтеза</li>
+                            <li>Собственные модели</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="tech-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Искусственный интеллект</h3>
+                    <p>Умная обработка команд</p>
+                    <div class="tech-details">
+                        <ul>
+                            <li>Нейронные сети</li>
+                            <li>Машинное обучение</li>
+                            <li>Контекстный анализ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2 data-aos="fade-up">Команда разработчиков</h2>
+            <div class="team-grid">
+                <div class="team-card" data-aos="flip-left">
+                    <div class="team-avatar">
+                        <img src="../images/team/dev1.jpg" alt="Разработчик">
+                        <div class="avatar-overlay"></div>
+                    </div>
+                    <h3>Александр Петров</h3>
+                    <p>Ведущий разработчик</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <!-- Добавьте больше карточек команды по аналогии -->
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <h2 data-aos="fade-up">Проект в цифрах</h2>
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="zoom-in">
+                    <div class="stat-number" data-value="1000">0</div>
+                    <p>Активных пользователей</p>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number" data-value="50">0</div>
+                    <p>Плагинов</p>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number" data-value="95">0</div>
+                    <p>Точность распознавания</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-sphere"></div>
+                <span>VA ADA</span>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Навигация</h4>
+                    <a href="../index.html">Главная</a>
+                    <a href="about.html">О проекте</a>
+                    <a href="features.html">Функции</a>
+                    <a href="docs.html">Документация</a>
+                    <a href="plugins.html">Плагины</a>
+                </div>
+                <div class="link-group">
+                    <h4>Контакты</h4>
+                    <a href="mailto:contact@va-ada.com">Email</a>
+                    <a href="https://github.com/va-ada">GitHub</a>
+                    <a href="https://t.me/va_ada">Telegram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 VA ADA. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../main.js"></script>
+    <script src="about.js"></script>
+</body>
+</html>

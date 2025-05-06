@@ -1,0 +1,297 @@
+/* Стили для страницы о проекте */
+.about-page {
+    padding-top: 100px;
+}
+
+/* Анимация появления текста */
+.reveal-text {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealText 1s forwards 0.5s;
+}
+
+@keyframes revealText {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Временная шкала */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: var(--gradient);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    right: -6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--gradient);
+    transform: translateX(50%);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    right: auto;
+    left: -6px;
+    transform: translateX(-50%);
+}
+
+.timeline-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+    width: 80%;
+    transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+}
+
+.timeline-content h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.timeline-content .date {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Технологии */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.tech-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+}
+
+.tech-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-icon i {
+    font-size: 2.5rem;
+    color: var(--text);
+}
+
+.tech-card:hover .tech-icon {
+    transform: rotate(360deg);
+}
+
+.tech-details {
+    height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.tech-card:hover .tech-details {
+    height: auto;
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+/* Команда */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.team-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.avatar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card:hover .avatar-overlay {
+    opacity: 0.3;
+}
+
+.team-card:hover img {
+    transform: scale(1.1);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: rotate(360deg);
+}
+
+/* Статистика */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 0;
+    }
+    
+    .timeline-item {
+        padding-right: 0;
+        padding-left: 2rem;
+    }
+    
+    .timeline-item:nth-child(even) {
+        padding-left: 2rem;
+    }
+    
+    .timeline-dot {
+        left: 0;
+        transform: translateX(-50%);
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 0;
+    }
+    
+    .timeline-content {
+        width: 100%;
+    }
+    
+    .tech-grid,
+    .team-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
